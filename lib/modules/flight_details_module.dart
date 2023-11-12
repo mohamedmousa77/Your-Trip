@@ -12,10 +12,12 @@ class FlightDetails {
   String arrivalDate;
   String flightDuration;
   String transit ;
+  String airlineLogo;
 
 
   FlightDetails(
       {required this.airlineName ,
+        required this.airlineLogo,
       required this.departureAirportName,
       required this.departureAirportCode,
       required this.departureCountryName,

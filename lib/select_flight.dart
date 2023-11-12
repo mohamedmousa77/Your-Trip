@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/widgets/flight_card.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
 import 'modules/flight_details_module.dart';
@@ -39,26 +38,9 @@ class _SelectFlightState extends State<SelectFlight> {
       body: Column(
         children: [
           Container(
-            // width: MediaQuery.of(context).size.width,
-            // height: MediaQuery.of(context).size.height * 0.3,
             color: Colors.white,
             child: Stack(
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  decoration: const BoxDecoration(
-                    borderRadius:
-                    BorderRadius.only(bottomLeft: Radius.circular(50)),
-                    color: Color.fromRGBO(0, 24, 78, 1),
-                  ),
-                  // child:   Image.asset("assert/flight-icon-2.png"),
-                  // child: SvgPicture.asset("assert/flt-icon-icon-1.svg",
-                  //     height: 140,
-                  //     fit: BoxFit.contain,
-                  //     color:Colors.orange
-                  // ),
-                ),
                 Container(
                   padding: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height * 0.02,
@@ -68,25 +50,13 @@ class _SelectFlightState extends State<SelectFlight> {
                         BorderRadius.only(bottomLeft: Radius.circular(50)),
                     color: Color.fromRGBO(0, 24, 78, 1),
                   ),
-                  child:   Image.asset("assert/map-2.png"),
+                  child:   Image.asset("assert/map-icon.png"),
                   ),
-                Container(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.02,
-                      left: MediaQuery.of(context).size.width * 0.05),
-                  decoration: const BoxDecoration(
-                    borderRadius:
-                    BorderRadius.only(bottomLeft: Radius.circular(50)),
-                    color: Color.fromRGBO(0, 24, 78, 1),
-                  ),
-                  // child: Image.asset("assert/flight-icon-4.png"),
-                ),
-
               ],
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.698,
+            height: MediaQuery.of(context).size.height * 0.69,
             width: MediaQuery.of(context).size.width,
             padding:
                 EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.02),
@@ -99,6 +69,7 @@ class _SelectFlightState extends State<SelectFlight> {
                 children: [
                   flightDetails(context,
                       flightDetails: FlightDetails(
+                          airlineLogo: 'airfrance-logo.png',
                           airlineName: "Airfrance",
                           departureAirportCode: widget.departureAirportCode,
                           departureCountryName: "Paris",
@@ -114,7 +85,7 @@ class _SelectFlightState extends State<SelectFlight> {
                           transit: "Non-stop")),
                   flightDetails(context,
                       flightDetails: FlightDetails(
-                          airlineName: "Airfrance",
+                          airlineName: "RyanAir",
                           departureAirportCode: widget.departureAirportCode,
                           departureCountryName: "Paris",
                           departureAirportName: widget.departureAirportName,
@@ -126,6 +97,7 @@ class _SelectFlightState extends State<SelectFlight> {
                           arrivalDate: DateFormat.yMMMd().format(widget.arrivalDate),
                           arrivalTime: "11:45AM",
                           flightDuration: "1h 45m",
+                          airlineLogo: 'ryn-logo.png',
                           transit: "Non-stop")),
                 ],
               ),

@@ -111,14 +111,18 @@ Container flightDetails(BuildContext context,
           // Air line name and price
           Spacer(),
           Row(
-
             children: [
               Container(
                 color: Colors.transparent,
-                child: Text(flightDetails.airlineName.toUpperCase(),
+                child: Text(flightDetails.airlineName,
                     style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 20,
                         color: const Color.fromRGBO(6, 6, 109, 1))),
               ),
+              Container(
+                height: MediaQuery.of(context).size.height *0.03,
+                width: MediaQuery.of(context).size.width *0.1,
+                child: Image.asset('assert/${flightDetails.airlineLogo}'),
+              )
             ],
           ),
         ],
