@@ -1,8 +1,6 @@
 class FlightDetails {
-  String departureAirportName;
   String departureAirportCode;
   String departureCountryName;
-  String arrivalAirportName;
   String arrivalAirportCode;
   String arrivalCountryName;
   String airlineName ;
@@ -18,10 +16,8 @@ class FlightDetails {
   FlightDetails(
       {required this.airlineName ,
         required this.airlineLogo,
-      required this.departureAirportName,
       required this.departureAirportCode,
       required this.departureCountryName,
-      required this.arrivalAirportName,
       required this.arrivalAirportCode,
       required this.arrivalCountryName,
       required this.arrivalDate,

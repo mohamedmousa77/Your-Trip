@@ -36,9 +36,9 @@ Container flightDetails(BuildContext context,
                   Text(flightDetails.departureCountryName,
                       style: GoogleFonts.poppins(
                           color: const Color.fromRGBO(0, 51, 51, 1))),
-                  Text(flightDetails.departureAirportName.replaceRange(20,flightDetails.departureAirportName.length, '...'),
-                      style: GoogleFonts.poppins(
-                          color: const Color.fromRGBO(0, 51, 51, 1))),
+                  // Text(flightDetails.departureAirportName.replaceRange(20,flightDetails.departureAirportName.length, '...'),
+                  //     style: GoogleFonts.poppins(
+                  //         color: const Color.fromRGBO(0, 51, 51, 1))),
                 ],
               ),
               Column(
@@ -51,9 +51,9 @@ Container flightDetails(BuildContext context,
                   Text(flightDetails.arrivalCountryName,
                       style: GoogleFonts.poppins(
                           color: const Color.fromRGBO(0, 51, 51, 1))),
-                  Text(flightDetails.arrivalAirportName,
-                      style: GoogleFonts.poppins(
-                          color: const Color.fromRGBO(0, 51, 51, 1))),
+                  // Text(flightDetails.arrivalAirportName,
+                  //     style: GoogleFonts.poppins(
+                  //         color: const Color.fromRGBO(0, 51, 51, 1))),
                 ],
               ),
             ],

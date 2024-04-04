@@ -5,9 +5,6 @@ import "package:flutter/material.dart";
 import 'package:intl/intl.dart';
 import 'colors/colors.dart';
 
-// import 'package:flutter_map/flutter_map.dart';
-// import 'package:http/http.dart';
-
 class SearchFlights extends StatefulWidget {
   const SearchFlights({super.key});
 
@@ -18,16 +15,16 @@ class SearchFlights extends StatefulWidget {
 class _SearchFlightsState extends State<SearchFlights> {
   bool isRoundTrip = true;
   List airports = [
-    {"name": "Los Angeles International Airport", "code": "LAX"},
-    {"name": "John F. Kennedy International Airport", "code": "JFK"},
-    {"name": "O'Hare International Airport", "code": "ORD"},
-    {"name": "Dallas-Fort Worth International Airport", "code": "DFW"},
+    {"name": "Los Angeles", "code": "LAX"},
+    {"name": "John F. Kennedy", "code": "JFK"},
+    {"name": "O'Hare", "code": "ORD"},
+    {"name": "Dallas-Fort Worth", "code": "DFW"},
     {"name": "Denver International Airport", "code": "DEN"},
-    {"name": "San Francisco International Airport", "code": "SFO"},
-    {"name": "Hartsfield-Jackson Atlanta International Airport", "code": "ATL"},
-    {"name": "Miami International Airport", "code": "MIA"},
-    {"name": "Seattle-Tacoma International Airport", "code": "SEA"},
-    {"name": "Phoenix Sky Harbor International Airport", "code": "PHX"},
+    {"name": "San Francisco", "code": "SFO"},
+    {"name": "Hartsfield-Jackson Atlanta", "code": "ATL"},
+    {"name": "Miami", "code": "MIA"},
+    {"name": "Seattle-Tacoma", "code": "SEA"},
+    {"name": "Phoenix Sky Harbor", "code": "PHX"},
   ];
   DateTime travelDate = DateTime.now();
   DateTime returnDate = DateTime.now();
@@ -86,7 +83,6 @@ class _SearchFlightsState extends State<SearchFlights> {
       child: ListView.builder(
           itemCount: airports.length,
           itemBuilder: (context, index) {
-            debugPrint(airports[index]['name']);
             return ListTile(
               onTap: () {
                 setState(() {
@@ -118,8 +114,6 @@ class _SearchFlightsState extends State<SearchFlights> {
     return StatefulBuilder(
       builder: (BuildContext context, StateSetter setState) {
         return SizedBox(
-          // height: MediaQuery.of(context).size.height * 0.4,
-          // width: MediaQuery.of(context).size.width * 0.5,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -364,8 +358,6 @@ class _SearchFlightsState extends State<SearchFlights> {
                         fontSize: 30,
                         fontWeight: FontWeight.w600),
                   )),
-
-
             ]),
           ),
 
@@ -472,13 +464,12 @@ class _SearchFlightsState extends State<SearchFlights> {
           ),
           GestureDetector(
             onTap: () {
-              debugPrint("Clicked, airports length ${airports.length}");
               showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
                         title: const Text(
-                          'Select an airport',
+                          'Choose the departure city',
                           style: TextStyle(color: Colors.black),
                         ),
                         content: airportListDialog(context, isFrom: true));
@@ -513,13 +504,16 @@ class _SearchFlightsState extends State<SearchFlights> {
                   ),
                   selectedAirportOngoing >= 0
                       ? Container(
-                          child: Text(airports[selectedAirportOngoing]['code'],
+                          child: Text('${airports[selectedAirportOngoing]['name']} ${airports[selectedAirportOngoing]['code']}',
                               style: GoogleFonts.poppins(
                                   color: const Color.fromRGBO(0, 24, 78, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15)),
                         )
-                      : const SizedBox()
+                      :  Text('Choose the departure city',style: GoogleFonts.poppins(
+                      color: const Color.fromRGBO(0, 24, 78, 1),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15))
                 ],
               ),
             ),
@@ -537,13 +531,12 @@ class _SearchFlightsState extends State<SearchFlights> {
           ),
           GestureDetector(
             onTap: () {
-              debugPrint("Clicked, airports length ${airports.length}");
               showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
                         title: const Text(
-                          'Select the arrival airport',
+                          'Choose your destination city',
                           style: TextStyle(color: Colors.black),
                         ),
                         content: airportListDialog(context, isFrom: false));
@@ -577,13 +570,17 @@ class _SearchFlightsState extends State<SearchFlights> {
                   ),
                   selectedAirportReturn >= 0
                       ? Container(
-                          child: Text(airports[selectedAirportReturn]['code'],
+                          child: Text(
+                              '${airports[selectedAirportReturn]['name']} ${airports[selectedAirportReturn]['code']}',
                               style: GoogleFonts.poppins(
                                   color: const Color.fromRGBO(0, 24, 78, 1),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15)),
                         )
-                      : const SizedBox()
+                      :  Text('Choose your destination city', style: GoogleFonts.poppins(
+                      color: const Color.fromRGBO(0, 24, 78, 1),
+                      fontWeight: FontWeight.w500,
+                      fontSize: 15))
                 ],
               ),
             ),
@@ -898,16 +895,14 @@ class _SearchFlightsState extends State<SearchFlights> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => SelectFlight(
-                            arrivalAirportCode: airports[selectedAirportOngoing]
+                            arrivalAirportCode: airports[selectedAirportReturn]
                                 ['code'],
-                            arrivalAirportName: airports[selectedAirportOngoing]
+                            arrivalCountryName: airports[selectedAirportReturn]
                                 ['name'],
-                            arrivalAirportCountry: '',
                             departureAirportCode:
-                                airports[selectedAirportReturn]['code'],
-                            departureAirportName:
-                                airports[selectedAirportReturn]['name'],
-                            departureAirportCountry: '',
+                                airports[selectedAirportOngoing]['code'],
+                            departureCountryName:
+                                airports[selectedAirportOngoing]['name'],
                             departureDate: travelDate,
                             arrivalDate: returnDate)));
               } else {

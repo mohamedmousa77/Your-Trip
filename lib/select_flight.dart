@@ -6,23 +6,19 @@ import 'modules/flight_details_module.dart';
 
 class SelectFlight extends StatefulWidget {
   String departureAirportCode;
-  String departureAirportCountry;
-  String departureAirportName;
+  String departureCountryName;
   DateTime departureDate;
   DateTime arrivalDate;
   String arrivalAirportCode;
-  String arrivalAirportCountry;
-  String arrivalAirportName;
+  String arrivalCountryName;
 
 
   SelectFlight(
       {super.key,
-     required this.departureAirportName,
         required this.departureAirportCode,
-        required this.departureAirportCountry,
+        required this.departureCountryName,
         required this.arrivalAirportCode,
-        required this.arrivalAirportCountry,
-        required this.arrivalAirportName,
+        required this.arrivalCountryName,
       required this.departureDate,
       required this.arrivalDate});
 
@@ -72,11 +68,9 @@ class _SelectFlightState extends State<SelectFlight> {
                           airlineLogo: 'airfrance-logo.png',
                           airlineName: "Airfrance",
                           departureAirportCode: widget.departureAirportCode,
-                          departureCountryName: "Paris",
-                          departureAirportName: widget.departureAirportName,
-                          arrivalAirportName: "Peretola Airport",
-                          arrivalCountryName: "Florance",
-                          arrivalAirportCode: "FLR",
+                          departureCountryName: widget.departureCountryName,
+                          arrivalCountryName: widget.arrivalCountryName,
+                          arrivalAirportCode: widget.arrivalAirportCode,
                           departureDate: DateFormat.yMMMd().format(widget.departureDate),
                           departureTime: "09:30AM",
                           arrivalDate: DateFormat.yMMMd().format(widget.arrivalDate),
@@ -87,11 +81,9 @@ class _SelectFlightState extends State<SelectFlight> {
                       flightDetails: FlightDetails(
                           airlineName: "RyanAir",
                           departureAirportCode: widget.departureAirportCode,
-                          departureCountryName: "Paris",
-                          departureAirportName: widget.departureAirportName,
-                          arrivalAirportName: "Peretola Airport",
-                          arrivalCountryName: "Florance",
-                          arrivalAirportCode: "FLR",
+                          departureCountryName: widget.departureCountryName,
+                          arrivalCountryName: widget.arrivalCountryName,
+                          arrivalAirportCode: widget.arrivalAirportCode,
                           departureDate: DateFormat.yMMMd().format(widget.departureDate),
                           departureTime: "09:30AM",
                           arrivalDate: DateFormat.yMMMd().format(widget.arrivalDate),
