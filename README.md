@@ -1,16 +1,46 @@
-# flutter_projects
+### ✈️ Let’s Fly – Flight Booking Application
 
-A new Flutter project.
+Let’s Fly is a beautifully crafted flight booking application built with Flutter, designed to provide a seamless and intuitive user experience across both Android and iOS platforms. Whether you're booking a one-way or round trip, the app simplifies the entire travel experience with a clean UI and smooth interaction.
 
-## Getting Started
+![your-trip-cover-img](https://github.com/user-attachments/assets/4fab483a-f285-46d2-aa0b-94fae6608468)
 
-This project is a starting point for a Flutter application.
+---
+### 🌟 Features
 
-A few resources to get you started if this is your first Flutter project:
+🛫 Book One-Way & Round Trips
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🌍 Choose Destination & Origin
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🗓️ Select Dates with Ease
+
+💰 View Estimated Prices & Flights
+
+📱 Cross-Platform: Flutter ensures smooth performance on iOS & Android
+
+🎨 Figma-Based UI: Designed for a visually appealing and user-friendly interface
+
+---
+### 🛠️ Tech Stack
+
+| Technology | Description                                      |
+| ---------- | ------------------------------------------------ |
+| Flutter    | UI framework for cross-platform development      |
+| Dart       | Programming language used with Flutter           |
+| Figma      | Used for designing a pixel-perfect app interface |
+
+---
+### 📁 Project Structure
+
+```
+lib/
+├── models/           # Data models (flight, ticket, etc.)
+├── screens/          # All screen UI files
+├── widgets/          # Reusable UI components
+├── utils/            # Constants, helpers
+└── main.dart         # App entry point
+```
+---
+## 🙋‍♂️ Author
+
+Mohamed Mousa:
+🔗 Portfolio: http://mohamedmousa.it
